@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.1</TargetFramework>
-    <RootNamespace>_0-positive_or_negative</RootNamespace>
+    <RootNamespace>_0_positive_or_negative</RootNamespace>
   </PropertyGroup>
 
 </Project>
