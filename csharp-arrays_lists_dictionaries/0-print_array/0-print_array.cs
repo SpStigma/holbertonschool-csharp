@@ -9,9 +9,10 @@ class Array
             Console.WriteLine("Size cannot be negative");
             return null;
         }
+
         if(size == 0)
         {
-            Console.WriteLine();
+            Console.WriteLine("");
         }
 
         int[] result = new int[size];
