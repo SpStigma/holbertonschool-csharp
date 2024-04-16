@@ -8,7 +8,7 @@ class Dictionary
         int maxScore = 0;
         string bestStudents = "";
 
-        if(myList.Count == 0)
+        if(myList == null || myList.Count == 0)
         {
             return "None";
         }
