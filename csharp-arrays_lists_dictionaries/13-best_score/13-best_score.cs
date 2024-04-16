@@ -8,6 +8,11 @@ class Dictionary
         int maxScore = 0;
         string bestStudents = "";
 
+        if(myList.Count == 0)
+        {
+            return "None";
+        }
+
         foreach(var kvp in myList)
         {
             if(kvp.Value > maxScore)
