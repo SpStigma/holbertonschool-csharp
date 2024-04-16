@@ -15,7 +15,7 @@ class Dictionary
 
         foreach(var kvp in myList)
         {
-            if(kvp.Value > maxScore)
+            if(kvp.Value >= maxScore)
             {
                 maxScore = kvp.Value;
                 bestStudents = kvp.Key;
