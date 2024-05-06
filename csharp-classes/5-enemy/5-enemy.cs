@@ -49,7 +49,7 @@ namespace Enemies
         ///<summary>Overrides the ToString method to print the Zombie object's attributes.</summary>
         public override string ToString()
         {
-            return "Zombie name: " + name + " \\ Total Health: " + health;
+            return $"Zombie Name: {name} / Total Health: {health}";
         }
     }
 }
