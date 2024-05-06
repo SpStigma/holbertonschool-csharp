@@ -7,6 +7,7 @@ namespace Enemies
     /// </summary>
     public class Zombie
     {
+        ///<summary>Represent the field health.</summary>
         public int health;
 
         ///<summary>
