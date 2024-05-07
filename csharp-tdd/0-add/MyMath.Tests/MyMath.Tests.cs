@@ -15,5 +15,13 @@ namespace MyMath.Tests
 
             Assert.That(result, Is.EqualTo(20));
         }
+
+        [Test]
+        public void Add_WhenMinAndMaxAdded_ReturnsNegOne()
+        {
+            var testSum = Operations.Add(int.MinValue, int.MaxValue);
+
+            Assert.That(testSum == -1);
+        }
     }
 }
