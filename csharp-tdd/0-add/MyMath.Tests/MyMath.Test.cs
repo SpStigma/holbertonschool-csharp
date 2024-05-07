@@ -1,6 +1,9 @@
+using Nunit.Framework;
+
 namespace MyMath.Tests
 {
-    public class Tests
+    [TestFixture]
+    public class OperationsTests
     {
         [Test]
         public void Add_ReturnsSumOfTwoIntegers()
