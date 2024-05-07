@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MyMathf
+namespace MyMath
 {
     ///<summary>Represent the Operations class.</summary>
     public class Operations
