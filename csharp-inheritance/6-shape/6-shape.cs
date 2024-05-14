@@ -14,6 +14,9 @@ class Shape
     }
 }
 
+/// <summary>
+/// Represent the Rectangle class that inherit from Shape
+/// </summary>
 class Rectangle : Shape
 {
     private int width;
@@ -25,7 +28,7 @@ class Rectangle : Shape
         set
         {
             if (value < 0)
-                throw new ArgumentException("Width must be greater than or equal to 0.");
+                throw new ArgumentException("Width must be greater than or equal to 0");
             width = value;
         }
     }
@@ -36,7 +39,7 @@ class Rectangle : Shape
         set
         {
             if (value < 0)
-                throw new ArgumentException("Height must be greater than or equal to 0.");
+                throw new ArgumentException("Height must be greater than or equal to 0");
             height = value;
         }
     }
