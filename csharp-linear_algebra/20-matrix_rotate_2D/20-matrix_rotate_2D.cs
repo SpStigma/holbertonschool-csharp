@@ -40,5 +40,4 @@ class MatrixMath
         return result;
     }
 }
-}
 
