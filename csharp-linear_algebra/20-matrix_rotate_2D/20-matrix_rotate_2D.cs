@@ -11,7 +11,6 @@ class MatrixMath
     public static double[,] Rotate2D(double[,] matrix, double angle)
     {
         int rows = matrix.GetLength(0);
-        int cols = matrix.GetLength(1);
         double cos = Math.Cos(angle);
         double sin = Math.Sin(angle);
 
