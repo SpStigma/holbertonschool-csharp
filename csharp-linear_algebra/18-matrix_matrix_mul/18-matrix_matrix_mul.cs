@@ -10,7 +10,7 @@ class MatrixMath
     /// </summary>
     public static double[,] Multiply(double[,] matrix1, double[,] matrix2)
     {
-        int colsMatrix1 = matrix1.GetLength(1);
+        int rowsMatrix1 = matrix1.GetLength(1);
         int colsMatrix1 = matrix1.GetLength(1);
         int rowsMatrix2 = matrix2.GetLength(0);
         int colsMatrix2 = matrix2.GetLength(1);
