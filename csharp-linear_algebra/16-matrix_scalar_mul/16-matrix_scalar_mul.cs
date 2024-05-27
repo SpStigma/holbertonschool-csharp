@@ -11,6 +11,11 @@ class MatrixMath
     /// </summary>
     public static double[,] MultiplyScalar(double[,] matrix, double scalar)
     {
+        if(matrix.GetLength(0) != 3 && matrix.GetLength(0) != 2)
+        {
+            return new double[,] {{-1}};
+        }
+
         int rows = matrix.GetLength(0);
         int cols = matrix.GetLength(1);
 
