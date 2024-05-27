@@ -11,7 +11,7 @@ class MatrixMath
     /// </summary>
     public static double[,] MultiplyScalar(double[,] matrix, double scalar)
     {
-        if(matrix1.GetLength(0) != 3 && matrix1.GetLength(0) != 2)
+        if(matrix.GetLength(0) != 3 && matrix.GetLength(0) != 2)
         {
             return new double[,] {{-1}};
         }
