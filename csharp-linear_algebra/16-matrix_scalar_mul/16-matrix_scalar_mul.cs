@@ -1,0 +1,32 @@
+﻿using System;
+
+
+/// <summary>
+/// Represent the MatrixMath class.
+/// </summary>
+class MatrixMath
+{
+    /// <summary>
+    /// Method to multiply a matrix by a scalar.
+    /// </summary>
+    public static double[,] MultiplyScalar(double[,] matrix, double scalar)
+    {
+        if(matrix1.GetLength(0) != 3 && matrix1.GetLength(0) != 2)
+        {
+            return new double[,] {{-1}};
+        }
+
+        int rows = matrix.GetLength(0);
+        int cols = matrix.GetLength(1);
+        double[,] result = new double[rows, cols];
+
+        for(int i = 0; i < rows; i++)
+        {
+            for(int j = 0; j < cols; j++)
+            {
+                result[i, j] = matrix[i, j] * scalar;
+            }
+        }
+        return result;
+    }
+}
