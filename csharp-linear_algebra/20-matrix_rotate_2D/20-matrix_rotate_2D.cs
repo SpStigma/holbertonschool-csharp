@@ -19,7 +19,8 @@ class MatrixMath
             return new double[,] {{-1}};
         }
 
-        double[,] result = new double[row, cols];
+        double[,] result = new double[2, 2];
+
         if (angle < 0)
         {
             result[0, 0] = cos * matrix[0, 0] + sin * matrix[0, 1];
