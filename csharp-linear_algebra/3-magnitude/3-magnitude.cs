@@ -13,7 +13,7 @@ class VectorMath
 
         foreach (double coordinate in vector)
         {
-            result += coordinate * coordonate;
+            result += coordinate * coordinate;
         }
 
         return Math.Round(Math.Sqrt(result), 2);
