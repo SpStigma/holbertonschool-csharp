@@ -18,7 +18,8 @@ class MatrixMath
 
         int rows = matrix.GetLength(0);
         int cols = matrix.GetLength(1);
-
+        
+        //Check if the matrix has the good dimensions
         if (rows < 1 || cols < 1 || rows > 3 || cols > 3)
         {
             return new double[,] { { -1 } };
