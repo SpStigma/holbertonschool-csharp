@@ -20,9 +20,14 @@ class MatrixMath
             return new double[,] { { -1 } };
         }
 
+        if (angle == 0)
+        {
+            return (double[,])matrix.Clone();
+        }
+
         double[,] result = new double[rows, cols];
 
-        if (angle >= 0)
+        if (angle > 0)
         {
             result[0, 0] = cos * matrix[0, 0] - sin * matrix[0, 1];
             result[0, 1] = sin * matrix[0, 0] + cos * matrix[0, 1];
@@ -39,5 +44,6 @@ class MatrixMath
 
         return result;
     }
+}
 }
 
