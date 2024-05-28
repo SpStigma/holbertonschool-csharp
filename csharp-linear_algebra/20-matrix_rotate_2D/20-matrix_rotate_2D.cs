@@ -18,7 +18,8 @@ class MatrixMath
             return new double[,] { { -1 } };
         }
 
-        double[,] Radians = {{Math.Cos(angle), Math.Sin(angle)}, {-1 * Math.Sin(angle), Math.Cos(angle)}};
+        double[,] RadiansNegative = {{Math.Cos(angle), Math.Sin(angle)}, {-1 * Math.Sin(angle), Math.Cos(angle)}};
+        double[,] RadiansPositive = {{Math.Cos(angle), -1 * Math.Sin(angle)}, {Math.Sin(angle), Math.Cos(angle)}};
         double[,] result = new double[rows, cols];
 
         for (int i = 0; i < rows; i++)
@@ -27,7 +28,14 @@ class MatrixMath
             {
                 for (int k = 0; k < cols; k++)
                 {
-                    result[i, j] += Math.Round(matrix[i, k] * Radians[k, j], 2);
+                    if (angle >= 0)
+                    {
+                        result[i, j] += Math.Round(matrix[i, k] * RadiansPositive[k, j], 2);
+                    }
+                    else
+                    {
+                        result[i, j] += Math.Round(matrix[i, k] * RadiansNegative[k, j], 2);
+                    }
                 }
             }
         }
