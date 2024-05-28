@@ -1,21 +1,39 @@
 ﻿using System;
 
-///<summary>Class matrixmath</summary>
+/// <summary>
+/// Represent the MatrixMath class.
+/// </summary>
 class MatrixMath
 {
-	///<summary>matrix rotation</summary>
-	///<return>transformedPoint</return>
-	public static double[,] Rotate2D(double[,] matrix, double angle)
-	{
-		if (matrix.GetLength(1) > 2)
-			return new double[,] { { -1 } };
-		double[,] rotationMatrix = {{Math.Cos(angle), Math.Sin(angle)}, {-1 * Math.Sin(angle), Math.Cos(angle)}};
-		double[,] transformedPoint = new double[2, 2];
+    /// <summary>
+    /// Method that apply a Matrix Rotation.
+    /// </summary>
+    public static double[,] Rotate2D(double[,] matrix, double angle)
+    {
+        int rows = matrix.GetLength(0);
+        int cols = matrix.GetLength(1);
 
-		for (int i = 0; i < 2; i++)
-			for (int j = 0; j < 2; j++)
-				for (int k = 0; k < 2; k++)
-					transformedPoint[i, j] = Math.Round(transformedPoint[i, j] + (matrix[i, k] * rotationMatrix[k, j]), 2);
-		return transformedPoint;
-	}
+        if (rows != 2 || cols != 2)
+        {
+            return new double[,] { { -1 } };
+        }
+
+        double[,] Radians = {{Math.Cos(angle), Math.Sin(angle)}, {-1 * Math.Sin(angle), Math.Cos(angle)}};
+        double[,] result = new double[rows, cols];
+
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++)
+            {
+                for (int k = 0; k < cols; k++)
+                {
+                    result[i, j] += Math.Round(matrix[i, k] * Radians[k, j], 2);
+                }
+            }
+        }
+
+        return result;
+    }
 }
+
+
