@@ -25,7 +25,7 @@ public class MatrixMath
 
         if (rows == 2)
         {
-            return matrix[0, 0] * matrix[1, 1] - matrix[0, 1] * matrix[1, 0];
+            return Math.Round(matrix[0, 0] * matrix[1, 1] - matrix[0, 1] * matrix[1, 0], 2);
         }
 
         if (rows == 3)
@@ -39,7 +39,7 @@ public class MatrixMath
                   matrix[0, 1] * matrix[1, 0] * matrix[2, 2] -
                   matrix[0, 0] * matrix[1, 2] * matrix[2, 1];
 
-            return det;
+            return Math.Round(det, 2);
         }
 
         return -1;
