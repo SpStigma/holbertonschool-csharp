@@ -42,6 +42,6 @@ public class MatrixMath
             return det;
         }
 
-        return -1
+        return -1;
     }
 }
