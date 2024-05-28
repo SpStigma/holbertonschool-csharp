@@ -23,30 +23,6 @@ public class MatrixMath
             return -1;
         }
 
-
-        bool isFullyFilled = true;
-        for (int i = 0; i < rows; i++)
-        {
-            for (int j = 0; j < cols; j++)
-            {
-                if (matrix[i, j] == 0)
-                {
-                    isFullyFilled = false;
-                    break;
-                }
-            }
-            if (!isFullyFilled)
-            {
-                break;
-            }
-        }
-
-        if (!isFullyFilled)
-        {
-            return -1; // La matrice est vide ou non entièrement remplie
-        }
-
-
         if (rows == 2)
         {
             return matrix[0, 0] * matrix[1, 1] - matrix[0, 1] * matrix[1, 0];
