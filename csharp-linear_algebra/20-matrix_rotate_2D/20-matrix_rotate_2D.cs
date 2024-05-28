@@ -12,34 +12,24 @@ class MatrixMath
     {
         int rows = matrix.GetLength(0);
         int cols = matrix.GetLength(1);
-        double cos = Math.Cos(angle);
-        double sin = Math.Sin(angle);
 
         if (rows != 2 || cols != 2)
         {
             return new double[,] { { -1 } };
         }
 
-        if (angle == 0)
-        {
-            return (double[,])matrix.Clone();
-        }
-
+        double[,] Radians = {{Math.Cos(angle), Math.Sin(angle)}, {-1 * Math.Sin(angle), Math.Cos(angle)}};
         double[,] result = new double[rows, cols];
 
-        if (angle > 0)
+        for (int i = 0; i < rows; i++)
         {
-            result[0, 0] = cos * matrix[0, 0] + (-1 * sin) * matrix[0, 1];
-            result[0, 1] = sin * matrix[0, 0] + cos * matrix[0, 1];
-            result[1, 0] = cos * matrix[1, 0] + (-1 * sin) * matrix[1, 1];
-            result[1, 1] = sin * matrix[1, 0] + cos * matrix[1, 1];
-        }
-        else
-        {
-            result[0, 0] = cos * matrix[0, 0] + sin * matrix[0, 1];
-            result[0, 1] = (-1 * sin) * matrix[0, 0] + cos * matrix[0, 1];
-            result[1, 0] = cos * matrix[1, 0] + sin * matrix[1, 1];
-            result[1, 1] = (-1 * sin) * matrix[1, 0] + cos * matrix[1, 1];
+            for (int j = 0; j < cols; j++)
+            {
+                for (int k = 0; k < cols; k++)
+                {
+                    result[i, j] += Math.Round(matrix[i, k] * Radians[k, j], 2);
+                }
+            }
         }
 
         return result;
