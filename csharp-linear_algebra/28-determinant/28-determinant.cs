@@ -1,23 +1,24 @@
 ﻿using System;
 
 /// <summary>
-/// Represent the MatrixMath.
+/// Represent the MatrixMath class.
 /// </summary>
-class MatrixMath
+public class MatrixMath
 {
     /// <summary>
-    /// Method to brute calculate the determinant on a 2X2 and 3X3.
+    /// Method to calculate the determinant.
     /// </summary>
     public static double Determinant(double[,] matrix)
     {
         int rows = matrix.GetLength(0);
         int cols = matrix.GetLength(1);
-        
-        if (rows != 2 && rows != 3)
+
+        if (rows != cols)
         {
             return -1;
         }
-        if (rows != cols)
+
+        if (rows != 2 && rows != 3)
         {
             return -1;
         }
@@ -29,10 +30,18 @@ class MatrixMath
 
         if (rows == 3)
         {
-            return matrix[0, 0] * (matrix[1, 1] * matrix[2, 2] - matrix[1, 2] * matrix[2, 1]) -
-                matrix[0, 1] * (matrix[1, 0] * matrix[2, 2] - matrix[1, 2] * matrix[2, 0]) +
-                matrix[0, 2] * (matrix[1, 0] * matrix[2, 1] - matrix[1, 1] * matrix[2, 0]);
+            double det = 0;
+
+            det = matrix[0, 0] * matrix[1, 1] * matrix[2, 2] +
+                  matrix[0, 1] * matrix[1, 2] * matrix[2, 0] +
+                  matrix[0, 2] * matrix[1, 0] * matrix[2, 1] -
+                  matrix[0, 2] * matrix[1, 1] * matrix[2, 0] -
+                  matrix[0, 1] * matrix[1, 0] * matrix[2, 2] -
+                  matrix[0, 0] * matrix[1, 2] * matrix[2, 1];
+
+            return det;
         }
-        return -1;
+
+        return -1
     }
 }
