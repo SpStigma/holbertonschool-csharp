@@ -1,5 +1,8 @@
 ﻿using System;
 
+/// <summary>
+/// Reprensent the Class Queue of paramater T.
+/// </summary>
 public class Queue<T>
 {
     /// <summary>
