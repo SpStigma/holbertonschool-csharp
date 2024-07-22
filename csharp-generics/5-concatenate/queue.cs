@@ -139,13 +139,13 @@ public class Queue<T>
     /// </summary>
     public String Concatenate()
     {
-        if(head == null)
+        if (head == null)
         {
             Console.WriteLine("Queue is empty");
             return null;
         }
 
-        if(typeof(T) != typeof(String) && typeof(T) != typeof(Char))
+        if (typeof(T) != typeof(String) && typeof(T) != typeof(Char))
         {
             Console.WriteLine("Concatenate() is for a queue of Strings or Chars only.");
             return null;
@@ -153,27 +153,29 @@ public class Queue<T>
 
         String concatenated = "";
         Node current = head;
+
         if (typeof(T) == typeof(Char))
         {
-            while(current != null)
+            while (current != null)
             {
-                concatenated += current.value;
+                concatenated += (Char)(object)current.value;
                 current = current.next;
             }
         }
-        else if(typeof(T) == typeof(String))
+        else if (typeof(T) == typeof(String))
         {
-            while(current != null)
+            while (current != null)
             {
-                concatenated += current.value;
+                concatenated += (String)(object)current.value;
                 current = current.next;
 
                 if (current != null)
                 {
-                    concatenated += "[ ]";
+                    concatenated += " ";
                 }
             }
         }
+
         return concatenated;
     }
 
