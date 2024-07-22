@@ -157,7 +157,7 @@ public class Queue<T>
         {
             while(current != null)
             {
-                concatenated += current.value;
+                concatenated += (char)(object)current.value;
                 current = current.next;
             }
         }
@@ -165,7 +165,7 @@ public class Queue<T>
         {
             while(current != null)
             {
-                concatenated += current.value;
+                concatenated += (string)(object)current.value;
                 current = current.next;
 
                 if (current != null)
