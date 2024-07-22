@@ -137,7 +137,7 @@ public class Queue<T>
     /// <summary>
     /// Concatenates the elements in the queue if they are of type string or char.
     /// </summary>
-    public string Concatenate()
+    public String Concatenate()
     {
         if(head == null)
         {
@@ -145,32 +145,32 @@ public class Queue<T>
             return null;
         }
 
-        if(typeof(T) != typeof(string) && typeof(T) != typeof(char))
+        if(typeof(T) != typeof(String) && typeof(T) != typeof(Char))
         {
             Console.WriteLine("Concatenate() is for a queue of Strings or Chars only.");
             return null;
         }
 
-        string concatenated = "";
+        String concatenated = "";
         Node current = head;
-        if (typeof(T) == typeof(char))
+        if (typeof(T) == typeof(Char))
         {
             while(current != null)
             {
-                concatenated += (char)(object)current.value;
+                concatenated += current.value;
                 current = current.next;
             }
         }
-        else if(typeof(T) == typeof(string))
+        else if(typeof(T) == typeof(String))
         {
             while(current != null)
             {
-                concatenated += (string)(object)current.value;
+                concatenated += current.value;
                 current = current.next;
 
                 if (current != null)
                 {
-                    concatenated += " ";
+                    concatenated += "[ ]";
                 }
             }
         }
