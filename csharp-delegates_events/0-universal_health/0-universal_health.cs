@@ -12,11 +12,11 @@ public class Player
     /// <summary>
     /// Constructor to initialize the properties name and maxHp and hp
     /// </summary>
-    public Player(string name ="Player", float maxHp = 100f)
+    public Player(string name ="Player", float maxHp = 100)
     {
         this.name = name;
 
-        if (maxHp < 0)
+        if (maxHp <= 0)
         {
             this.maxHp = 100;
             Console.WriteLine("maxHp must be greater than 0. maxHp set to 100f by default.");
