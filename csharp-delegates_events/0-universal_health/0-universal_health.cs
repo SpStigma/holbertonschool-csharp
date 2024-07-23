@@ -1,7 +1,7 @@
 ﻿using System;
 
 /// <summary>
-/// Represent the Player class with 3 differents properties.
+/// Represents the Player class with 3 different properties.
 /// </summary>
 public class Player
 {
@@ -12,24 +12,24 @@ public class Player
     /// <summary>
     /// Constructor to initialize the properties name and maxHp and hp
     /// </summary>
-    public Player(string name ="Player", float maxHp = 100)
+    public Player(string name = "Player", float maxHp = 100f)
     {
         this.name = name;
 
         if (maxHp <= 0)
         {
-            this.maxHp = 100;
+            this.maxHp = 100f;
             Console.WriteLine("maxHp must be greater than 0. maxHp set to 100f by default.");
         }
         else
         {
             this.maxHp = maxHp;
         }
-        this.hp = maxHp;
+        this.hp = this.maxHp;
     }
 
     /// <summary>
-    /// Method to Print Health.
+    /// Method to print health.
     /// </summary>
     public void PrintHealth()
     {
