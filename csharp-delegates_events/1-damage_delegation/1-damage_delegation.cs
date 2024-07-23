@@ -9,6 +9,9 @@ public class Player
     private float maxHp;
     private float hp;
 
+    /// <summary>
+    /// Delegate to calculate health modifications.
+    /// </summary>
     public delegate void CalculateHealth(float amount);
 
     /// <summary>
