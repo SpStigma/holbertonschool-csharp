@@ -1,30 +1,6 @@
 ﻿using System;
 
 /// <summary>
-/// Enum for different modifier statuses.
-/// </summary>
-public enum Modifier
-{
-    /// <summary>
-    /// Weak status, applies a reduction to the base value.
-    /// </summary>
-    Weak,
-    /// <summary>
-    /// Base status, no change to the base value.
-    /// </summary>
-    Base,
-    /// <summary>
-    /// Strong status, applies an increase to the base value.
-    /// </summary>
-    Strong
-}
-
-/// <summary>
-/// Delegate to calculate a modified value based on a base value and a modifier.
-/// </summary>
-public delegate float CalculateModifier(float baseValue, Modifier modifier);
-
-/// <summary>
 /// Represents a player with health management and status updates.
 /// </summary>
 public class Player
@@ -160,7 +136,7 @@ public class Player
         {
             this.status = $"{this.name} needs help!";
         }
-        else
+        else // hp == 0
         {
             this.status = $"{this.name} is knocked out!";
         }
