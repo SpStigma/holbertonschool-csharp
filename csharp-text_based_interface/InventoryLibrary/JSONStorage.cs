@@ -9,7 +9,7 @@ namespace InventoryLibrary
     {
         public Dictionary<string, string> objects =  new Dictionary<string, string>();
 
-        public DictionartAll()
+        public Dictionary All()
         {
             return objects;
         }
