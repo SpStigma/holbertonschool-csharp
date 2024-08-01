@@ -33,7 +33,7 @@ public class JSONStorage
 
     public Save()
     {
-        string directory = "storage"
+        string directory = "storage";
 
         // Use .IO to check if directory exist
         if(!Directory.Exists(directory))
@@ -48,7 +48,7 @@ public class JSONStorage
         //Transform to Json
         string jsonString = JsonSerializer.Serialize(objects);
         //Create the file with json inside.
-        fileName.WriteAllText(filepath, jsonString);
+        File.WriteAllText(filepath, jsonString);
     }
 
     public void Load()
