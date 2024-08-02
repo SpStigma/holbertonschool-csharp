@@ -6,18 +6,18 @@ namespace inventoryLibrary
     {
         public string user_id { get; set; }
         public string item_id { get; set; }
-        public int quantity;
+        private int _quantity;
 
         public int quantity
         {
-            get => quantity;
+            get => _quantity;
             set
             {
                 if(value < 0)
                 {
                     throw new ArgumentException("can not be negative");
                 }
-                quantity = value;
+                _quantity = value;
             }
         }
 

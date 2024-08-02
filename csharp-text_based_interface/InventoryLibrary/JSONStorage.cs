@@ -7,9 +7,9 @@ namespace inventoryLibrary
 {
     public class JSONStorage
     {
-        public Dictionary<string, string> objects =  new Dictionary<string, string>();
+        public Dictionary<object, string> objects =  new Dictionary<object, string>();
 
-        public Dictionary All()
+        public Dictionary<object, string> All()
         {
             return objects;
         }
@@ -19,7 +19,7 @@ namespace inventoryLibrary
             string className = obj.GetType().Name;
             string id = obj.GetType().GetProperty("id")?.GetValue(obj)?.ToString();
 
-                    if (id != null)
+            if (id != null)
             {
                 string key = $"{className}.{id}";
 
@@ -33,9 +33,9 @@ namespace inventoryLibrary
             }
         }
 
-        public Save()
+        public void Save()
         {
-            string directory = "storage"
+            string directory = "storage";
 
             // Use .IO to check if directory exist
             if(!Directory.Exists(directory))
