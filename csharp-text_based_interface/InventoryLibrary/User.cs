@@ -1,6 +1,6 @@
 using System;
 
-namespace inventoryLibrary
+namespace InventoryLibrary
 {
     public class User : BaseClass
     {

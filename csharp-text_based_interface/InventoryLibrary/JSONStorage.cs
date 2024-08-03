@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
 
-namespace inventoryLibrary
+namespace InventoryLibrary
 {
     public class JSONStorage
     {
-        public Dictionary<object, string> objects =  new Dictionary<object, string>();
+        public Dictionary<string, string> objects = new Dictionary<string, string>();
 
-        public Dictionary<object, string> All()
+        public Dictionary<string, string> All()
         {
             return objects;
         }
@@ -50,7 +50,7 @@ namespace inventoryLibrary
             //Transform to Json
             string jsonString = JsonSerializer.Serialize(objects);
             //Create the file with json inside.
-            fileName.WriteAllText(filepath, jsonString);
+            File.WriteAllText(filepath, jsonString);
         }
 
         public void Load()
@@ -62,11 +62,11 @@ namespace inventoryLibrary
             if (File.Exists(filePath))
             {
                 string jsonString = File.ReadAllText(filePath);
-                objects = JsonSerializer.Deserialize<MyObject[]>(jsonString);
+                objects = JsonSerializer.Deserialize<Dictionary<string, string>>(jsonString);
             }
             else
             {
-                Console.WriteLine("Le fichier JSON n'existe pas.");
+                Console.WriteLine("The JSON file does not exist.");
             }
         }
     }

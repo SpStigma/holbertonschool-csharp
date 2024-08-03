@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace inventoryLibrary
+namespace InventoryLibrary
 {
     public class Item : BaseClass
     {
